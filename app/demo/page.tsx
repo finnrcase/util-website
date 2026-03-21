@@ -30,21 +30,22 @@ const screenshotAssets = [
 ];
 
 const liveDemoUrl = "https://utilplatformv01.streamlit.app/";
+const liveDemoPreviewSrc = "/previews/util-demo-clickthrough.png";
 
 export default function DemoPage() {
   return (
     <PageShell
       eyebrow="Product Demo"
       title="A polished home for screenshots, walkthroughs, and the live product preview."
-      intro="The live demo is available now. Because the current Streamlit deployment redirects through Streamlit's hosted auth flow, this page uses a polished launch surface instead of an unreliable embedded mini-window."
+      intro="The live demo is available now. This page uses a clickable product screenshot so visitors get a clear preview and can jump straight into the live app."
     >
       <Section
         eyebrow="What belongs here"
         title="Prepared for demo assets"
-        intro="This page now gives visitors a direct path into the live product while still leaving room for screenshots and a future walkthrough."
+        intro="Visitors can preview the real interface at a glance, then open the full demo with one click."
       >
         <div className="grid gap-6 md:grid-cols-3">
-          <Reveal delay={0}><InfoCard title="Live product">Send visitors straight into the working Streamlit app with a clear launch point.</InfoCard></Reveal>
+          <Reveal delay={0}><InfoCard title="Clickable preview">Show the real product UI and use the full image as the launch point into the demo.</InfoCard></Reveal>
           <Reveal delay={80}><InfoCard title="Screenshot sequence">Add desktop app screens showing setup, forecast comparison, and schedule output.</InfoCard></Reveal>
           <Reveal delay={160}><InfoCard title="Walkthrough video">Drop in a short narrated product tour later for people who want the guided version first.</InfoCard></Reveal>
         </div>
@@ -53,7 +54,7 @@ export default function DemoPage() {
       <Reveal>
         <PlaceholderFrame
           caption="Live demo"
-          title="Launch the interactive Util demo"
+          title="Preview the Util demo"
         >
           <div className="grid gap-0 lg:grid-cols-[1.2fr_0.8fr]">
             <div className="relative min-h-[380px] border-b border-white/8 bg-[radial-gradient(circle_at_top,_rgba(126,71,231,0.18),_transparent_38%),radial-gradient(circle_at_80%_20%,_rgba(54,126,193,0.14),_transparent_26%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))] p-6 lg:border-b-0 lg:border-r lg:p-8">
@@ -72,13 +73,13 @@ export default function DemoPage() {
                   <div className="grid gap-5 px-2 py-6 md:grid-cols-[1.05fr_0.95fr] md:items-center">
                     <div>
                       <div className="inline-flex rounded-full border border-[#7E47E7]/25 bg-[#7E47E7]/10 px-3 py-1 text-xs font-medium text-[#B7C3E2]">
-                        Interactive demo available
+                        Clickable live preview
                       </div>
                       <h3 className="mt-4 text-2xl font-semibold tracking-[-0.05em] text-white">
-                        Open the working product in a dedicated window.
+                        Click the product screenshot to open the full demo.
                       </h3>
                       <p className="mt-4 max-w-md text-sm leading-6 text-[#A7A8AB]">
-                        The current hosted Streamlit deployment does not behave like a clean embeddable widget, so the best visitor experience is a direct launch into the real app.
+                        This keeps the page clean, shows people what the interface looks like, and avoids the reliability issues that come with embedding the current Streamlit deployment.
                       </p>
                       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                         <PrimaryLink href={liveDemoUrl}>Open live demo</PrimaryLink>
@@ -86,17 +87,22 @@ export default function DemoPage() {
                       </div>
                     </div>
 
-                    <div className="grid gap-3">
-                      <div className="rounded-[1.2rem] border border-white/8 bg-white/[0.04] px-4 py-4 text-sm text-[#A7A8AB]">
-                        Full interaction works best in its own browser tab.
-                      </div>
-                      <div className="rounded-[1.2rem] border border-white/8 bg-white/[0.04] px-4 py-4 text-sm text-[#A7A8AB]">
-                        Keeps the real app usable on both desktop and mobile.
-                      </div>
-                      <div className="rounded-[1.2rem] border border-white/8 bg-white/[0.04] px-4 py-4 text-sm text-[#A7A8AB]">
-                        Easy to swap for an embed later if you move to an iframe-friendly deployment.
-                      </div>
-                    </div>
+                    <a
+                      href={liveDemoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group block overflow-hidden rounded-[1.2rem] border border-white/10 bg-[#0A0C10] transition-transform duration-300 hover:-translate-y-1 hover:border-white/20"
+                    >
+                      <AssetImageSlot
+                        src={liveDemoPreviewSrc}
+                        alt="Util demo interface preview"
+                        wrapperClassName="relative h-[360px] w-full overflow-hidden"
+                        imageClassName="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                        fallbackLabel="Expected preview"
+                        fallbackTitle={liveDemoPreviewSrc}
+                        fallbackBody="Place the provided demo screenshot at this path and the whole image card will open the live demo link."
+                      />
+                    </a>
                   </div>
                 </div>
 
@@ -133,12 +139,12 @@ export default function DemoPage() {
 
       <Section
         eyebrow="Live demo status"
-        title="Best current experience is a direct launch"
-        intro="Right now the app is reachable, but its hosted setup is better treated as a destination than as an embedded micro-window."
+        title="Clear preview, reliable launch"
+        intro="The page now uses the product screenshot as the main call to action, which is simpler, more stable, and still feels interactive."
       >
         <div className="grid gap-6 md:grid-cols-2">
-          <Reveal delay={0}><InfoCard title="Why not embed it">The current Streamlit URL redirects through Streamlit&apos;s hosted auth/share flow, which makes iframe-style embedding unreliable for visitors.</InfoCard></Reveal>
-          <Reveal delay={80}><InfoCard title="Best upgrade path">If you later host the app on an iframe-friendly domain, this hero can be swapped to a true embedded window with minimal layout changes.</InfoCard></Reveal>
+          <Reveal delay={0}><InfoCard title="Why this is better">The current Streamlit hosting flow is not a great fit for iframe embedding, so a clickable image gives a more dependable visitor experience.</InfoCard></Reveal>
+          <Reveal delay={80}><InfoCard title="Image path">Add your screenshot at `/previews/util-demo-clickthrough.png` and it will automatically appear as the launch surface.</InfoCard></Reveal>
         </div>
       </Section>
 

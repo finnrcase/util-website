@@ -6,6 +6,19 @@ import { SiteNav } from "@/components/site-nav";
 import { assetExists } from "@/lib/assets";
 
 export function generateMetadata(): Metadata {
+  const icons = assetExists("/brand/logo-mark.png")
+    ? {
+        icon: "/brand/logo-mark.png",
+        apple: "/brand/logo-mark.png",
+        shortcut: assetExists("/brand/favicon.ico") ? "/brand/favicon.ico" : "/brand/logo-mark.png",
+      }
+    : assetExists("/brand/favicon.ico")
+      ? {
+          icon: "/brand/favicon.ico",
+          shortcut: "/brand/favicon.ico",
+        }
+      : undefined;
+
   return {
     title: {
       default: "Util",
@@ -13,12 +26,7 @@ export function generateMetadata(): Metadata {
     },
     description:
       "Util is a compute scheduling app that helps teams shift workloads toward lower-cost, lower-carbon windows.",
-    icons: assetExists("/brand/favicon.ico")
-      ? {
-          icon: "/brand/favicon.ico",
-          shortcut: "/brand/favicon.ico",
-        }
-      : undefined,
+    icons,
     openGraph: assetExists("/previews/og-cover.png")
       ? {
           images: ["/previews/og-cover.png"],
