@@ -39,14 +39,13 @@ export function LogoWordmark() {
 }
 
 export function LogoMark() {
-  if (assetExists("/brand/util-logo-mark.svg")) {
+  if (assetExists("/brand/logo-mark.png")) {
     return (
       <Image
-        src="/brand/util-logo-mark.svg"
+        src="/brand/logo-mark.png"
         alt="Util mark"
         width={32}
         height={32}
-        unoptimized
         className="h-6 w-6"
       />
     );
@@ -134,3 +133,4 @@ export function AssetVideoSlot({
 
   return null;
 }
+

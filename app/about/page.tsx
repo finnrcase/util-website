@@ -12,34 +12,33 @@ export default function AboutPage() {
   return (
     <PageShell
       eyebrow="About Util"
-      title="A compute scheduling product designed around timing as a controllable variable."
-      intro="Util exists because flexible workloads already create room for better timing decisions, but the cost and carbon signals that should guide those decisions are rarely surfaced in everyday tooling."
+      title="A compute scheduling software application designed around timing and location as controllable variables."
+      intro="We built Util to lower costs and carbon emissions for flexible compute workloads. The application is designed to help users understand the timing tradeoffs that impact both economic and environmental outcomes."
     >
       <Section
         eyebrow="Positioning"
         title="What Util is"
-        intro="Util is a recommendation and scheduling layer for compute. It helps users decide when a workload should run based on changing electricity prices and carbon intensity."
+        intro="Util is a recommendation and scheduling layer for large compute workloads. It automatically decides when a workload should run based on changing electricity prices, carbon intensity, and location."
       >
         <div className="grid gap-6 md:grid-cols-3">
-          <Reveal delay={0}><InfoCard title="Explainable recommendations">The product is designed to show why a schedule is better, not just output a hidden score.</InfoCard></Reveal>
-          <Reveal delay={80}><InfoCard title="Desktop-first direction">The real product is a downloadable application. This website is the marketing surface where the story and future download path live.</InfoCard></Reveal>
-          <Reveal delay={160}><InfoCard title="Operator clarity">Users should be able to understand timing tradeoffs quickly without reading raw energy charts.</InfoCard></Reveal>
+          <Reveal delay={0}><InfoCard title="Pricing">Using live electricity price data, our program incentives a cleaner grid while reducing user costs.</InfoCard></Reveal>
+          <Reveal delay={80}><InfoCard title="Carbon Intensity">Access to constantly updating emission data and our systems carbon predictions allows for users to compute in a cleaner way.</InfoCard></Reveal>
+          <Reveal delay={160}><InfoCard title="Location">With certain locations having more acess to cleaner and cheaper energy, Util shifts workloads to your most optimal computer.</InfoCard></Reveal>
         </div>
       </Section>
 
       <Section
         eyebrow="Why it matters"
-        title="Timing compute changes both economic and carbon outcomes"
-        intro="A lot of workloads are deadline-sensitive but not start-time-sensitive. That difference creates a real optimization surface."
+        title="Timing and location compute changes both economic and carbon outcomes"
+        intro="A lot of workloads are deadline-sensitive but not start-time-sensitive. That difference creates an optimization opportunity."
       >
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <Reveal>
             <div className="section-shell rounded-[2rem] p-6 md:p-8">
               <div className="grid gap-5 md:grid-cols-2">
                 <InfoCard title="Electricity cost changes hourly">Running at 1:00 PM and 3:00 AM can produce meaningfully different cost outcomes.</InfoCard>
-                <InfoCard title="Carbon intensity shifts with the grid">The same workload can land against very different emissions conditions depending on timing.</InfoCard>
-                <InfoCard title="Flexibility is often already present">Training runs, overnight jobs, render pipelines, and ETL workflows are often movable without harming delivery.</InfoCard>
-                <InfoCard title="Better timing compounds">Once timing becomes part of planning, optimization becomes repeatable instead of ad hoc.</InfoCard>
+                <InfoCard title="Clean energy infrastructure">The same workload can land against very different emissions conditions depending on where it is run.</InfoCard>
+                <InfoCard title="Flexibility is often already present">Training runs, overnight jobs, render pipelines, AI training, research simulations, and ETL workflows are often movable without harming delivery.</InfoCard>
               </div>
             </div>
           </Reveal>
