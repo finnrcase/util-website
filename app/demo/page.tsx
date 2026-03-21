@@ -30,7 +30,7 @@ const screenshotAssets = [
 ];
 
 const liveDemoUrl = "https://utilplatformv01.streamlit.app/";
-const liveDemoPreviewSrc = "/previews/util-demo-clickthrough.png";
+const liveDemoPreviewSrc = "/previews/clickthrough.png";
 
 export default function DemoPage() {
   return (
@@ -143,7 +143,7 @@ export default function DemoPage() {
       >
         <div className="grid gap-6 md:grid-cols-2">
           <Reveal delay={0}><InfoCard title="Why this is better">The current Streamlit hosting flow is not a great fit for iframe embedding, so a clickable image gives a more dependable visitor experience.</InfoCard></Reveal>
-          <Reveal delay={80}><InfoCard title="Image path">Add your screenshot at `/previews/util-demo-clickthrough.png` and it will automatically appear as the launch surface.</InfoCard></Reveal>
+          <Reveal delay={80}><InfoCard title="Image path">Add your screenshot at `/previews/clickthrough.png` and it will automatically appear as the launch surface.</InfoCard></Reveal>
         </div>
       </Section>
 
