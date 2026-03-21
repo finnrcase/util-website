@@ -76,14 +76,13 @@ export default function DemoPage() {
                         Clickable live preview
                       </div>
                       <h3 className="mt-4 text-2xl font-semibold tracking-[-0.05em] text-white">
-                        Click the product screenshot to open the full demo.
+                        Explore how Util turns workload inputs into smarter run timing.
                       </h3>
                       <p className="mt-4 max-w-md text-sm leading-6 text-[#A7A8AB]">
-                        This keeps the page clean, shows people what the interface looks like, and avoids the reliability issues that come with embedding the current Streamlit deployment.
+                        This demo walks clients through the optimization flow, showing how Util compares location, timing, and energy signals to recommend a more efficient compute schedule.
                       </p>
-                      <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                      <div className="mt-6">
                         <PrimaryLink href={liveDemoUrl}>Open live demo</PrimaryLink>
-                        <SecondaryLink href={liveDemoUrl}>Open demo URL</SecondaryLink>
                       </div>
                     </div>
 
