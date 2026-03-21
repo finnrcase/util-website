@@ -60,7 +60,7 @@ export default function RootLayout({
                 <SiteNav />
 
                 <div className="hidden md:block">
-                  <PrimaryLink href="/download">Get Notified</PrimaryLink>
+                  <PrimaryLink href="/download">Download</PrimaryLink>
                 </div>
 
                 <div className="flex w-full items-center justify-between gap-4 border-t border-white/8 pt-4 md:hidden">
@@ -96,6 +96,9 @@ export default function RootLayout({
                   </Link>
                   <Link href="/download" className="transition-colors hover:text-white">
                     Download
+                  </Link>
+                  <Link href="/contact" className="transition-colors hover:text-white">
+                    Contact
                   </Link>
                 </div>
               </div>

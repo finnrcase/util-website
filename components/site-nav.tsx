@@ -8,6 +8,7 @@ const navItems = [
   { href: "/demo", label: "Demo" },
   { href: "/roadmap", label: "What's Coming" },
   { href: "/download", label: "Download" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteNav({ mobile = false }: { mobile?: boolean }) {
