@@ -29,6 +29,27 @@ const screenshotAssets = [
   },
 ];
 
+const demoTabs = [
+  {
+    title: "Optimizer",
+    icon: "⚙️",
+    description:
+      "Configures your workload and determines the best time to run it. Input your compute hours, deadline, and location, and Util calculates the optimal schedule to minimize cost or carbon emissions.",
+  },
+  {
+    title: "Savings Analysis",
+    icon: "📊",
+    description:
+      "Shows the impact of optimization. Compare running now vs optimized scheduling, including carbon reduction, cost savings, and visual breakdowns of performance.",
+  },
+  {
+    title: "Forecast Signals",
+    icon: "📈",
+    description:
+      "Displays real-time grid conditions. View carbon intensity and electricity pricing trends over time to understand when energy is cleanest and cheapest.",
+  },
+];
+
 const liveDemoUrl = "https://utilplatformv01.streamlit.app/";
 const liveDemoPreviewSrc = "/previews/clickthrough.png";
 
@@ -106,10 +127,16 @@ export default function DemoPage() {
                 </div>
 
                 <div className="mt-5 grid gap-3 sm:grid-cols-3">
-                  {screenshotAssets.map((asset, index) => (
-                    <Reveal key={asset.src} delay={index * 90}>
-                      <div className="rounded-[1.2rem] border border-white/8 bg-white/[0.03] px-4 py-5 text-sm text-[#A7A8AB]">
-                        {asset.label}
+                  {demoTabs.map((tab, index) => (
+                    <Reveal key={tab.title} delay={index * 90}>
+                      <div className="rounded-[1.2rem] border border-white/8 bg-white/[0.03] px-4 py-5">
+                        <div className="flex items-center gap-2 text-sm font-semibold text-white">
+                          <span aria-hidden="true" className="text-base leading-none">{tab.icon}</span>
+                          <span>{tab.title}</span>
+                        </div>
+                        <p className="mt-3 text-sm leading-6 text-[#A7A8AB]">
+                          {tab.description}
+                        </p>
                       </div>
                     </Reveal>
                   ))}
