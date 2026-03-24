@@ -2,15 +2,7 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-export function Reveal({
-  children,
-  delay = 0,
-  className = "",
-}: {
-  children: ReactNode;
-  delay?: number;
-  className?: string;
-}) {
+function useRevealVisibility() {
   const ref = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
 
@@ -34,14 +26,50 @@ export function Reveal({
     return () => observer.disconnect();
   }, []);
 
+  return { ref, visible };
+}
+
+export function Reveal({
+  children,
+  delay = 0,
+  className = "",
+  variant = "up",
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+  variant?: "up" | "blur" | "left" | "right";
+}) {
+  const { ref, visible } = useRevealVisibility();
+
   return (
     <div
       ref={ref}
       className={`reveal ${className}`}
       data-visible={visible}
+      data-variant={variant}
       style={{ ["--reveal-delay" as string]: `${delay}ms` }}
     >
       {children}
     </div>
+  );
+}
+
+export function RevealLine({
+  className = "",
+  delay = 0,
+}: {
+  className?: string;
+  delay?: number;
+}) {
+  const { ref, visible } = useRevealVisibility();
+
+  return (
+    <div
+      ref={ref}
+      className={`reveal-line ${className}`}
+      data-visible={visible}
+      style={{ ["--reveal-delay" as string]: `${delay}ms` }}
+    />
   );
 }

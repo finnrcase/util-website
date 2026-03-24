@@ -9,7 +9,7 @@ const baseButtonClasses =
 export function BrandMark() {
   return (
     <div className="flex items-center gap-3">
-      <div className="surface hairline glow-pulse relative flex h-11 w-11 items-center justify-center rounded-[1.1rem] overflow-hidden">
+      <div className="surface hairline glow-pulse relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-[1.1rem]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(126,71,231,0.34),_transparent_58%)]" />
         <LogoMark />
       </div>
@@ -38,9 +38,9 @@ export function PageShell({
   children: ReactNode;
 }) {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16 md:px-8 md:py-24">
-      <Reveal>
-        <div className="section-shell relative overflow-hidden rounded-[2.25rem] px-6 py-10 md:px-10 md:py-14">
+    <div className="mx-auto max-w-6xl px-6 py-14 md:px-8 md:py-20">
+      <Reveal variant="blur">
+        <div className="section-shell relative overflow-hidden rounded-[2.25rem] px-6 py-9 md:px-10 md:py-12">
           <div className="hero-glow left-[-2rem] top-[-3rem] bg-[rgba(126,71,231,0.24)]" />
           <div className="hero-glow bottom-[-4rem] right-[-2rem] bg-[rgba(54,126,193,0.18)]" />
           <div className="absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
@@ -55,7 +55,7 @@ export function PageShell({
           </div>
         </div>
       </Reveal>
-      <div className="mt-10 space-y-10 md:mt-14 md:space-y-14">{children}</div>
+      <div className="mt-10 space-y-12 md:mt-14 md:space-y-16">{children}</div>
     </div>
   );
 }
@@ -72,7 +72,7 @@ export function Section({
   eyebrow?: string;
 }) {
   return (
-    <Reveal>
+    <Reveal variant="blur">
       <section className="space-y-6">
         <div className="max-w-2xl">
           {eyebrow ? (
@@ -143,14 +143,16 @@ export function Metric({
 export function PrimaryLink({
   href,
   children,
+  className = "",
 }: {
   href: string;
   children: ReactNode;
+  className?: string;
 }) {
   return (
     <Link
       href={href}
-      className={`${baseButtonClasses} group relative overflow-hidden bg-[linear-gradient(135deg,#7E47E7_0%,#367EC1_100%)] text-white shadow-[0_14px_40px_rgba(126,71,231,0.28)] hover:-translate-y-0.5 hover:shadow-[0_18px_46px_rgba(126,71,231,0.34)]`}
+      className={`${baseButtonClasses} group relative overflow-hidden bg-[linear-gradient(135deg,#7E47E7_0%,#367EC1_100%)] text-white shadow-[0_14px_40px_rgba(126,71,231,0.28)] hover:-translate-y-0.5 hover:shadow-[0_18px_46px_rgba(126,71,231,0.34)] ${className}`}
     >
       <span className="relative z-10">{children}</span>
       <span className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.16),transparent_48%)] opacity-70 transition-opacity duration-300 group-hover:opacity-100" />

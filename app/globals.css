@@ -128,6 +128,52 @@ body::after {
   }
 }
 
+@keyframes revealBlur {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.985);
+    filter: blur(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes revealLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes revealRight {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes lineReveal {
+  from {
+    opacity: 0;
+    transform: scaleX(0.35);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
 @keyframes pageEnter {
   from {
     opacity: 0;
@@ -145,6 +191,17 @@ body::after {
   border: 1px solid var(--border);
   box-shadow: var(--panel-shadow);
   backdrop-filter: blur(18px);
+}
+
+.surface-soft {
+  background:
+    radial-gradient(circle at top, rgba(126, 71, 231, 0.08), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.025) 100%);
+  border: 1px solid rgba(183, 195, 226, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 24px 70px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(20px);
 }
 
 .surface-strong {
@@ -223,7 +280,43 @@ body::after {
 }
 
 .reveal[data-visible="true"] {
-  animation: revealUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: revealUp 0.72s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal[data-variant="blur"] {
+  transform: translateY(20px) scale(0.985);
+  filter: blur(16px);
+}
+
+.reveal[data-variant="blur"][data-visible="true"] {
+  animation-name: revealBlur;
+}
+
+.reveal[data-variant="left"] {
+  transform: translateX(-28px);
+}
+
+.reveal[data-variant="left"][data-visible="true"] {
+  animation-name: revealLeft;
+}
+
+.reveal[data-variant="right"] {
+  transform: translateX(28px);
+}
+
+.reveal[data-variant="right"][data-visible="true"] {
+  animation-name: revealRight;
+}
+
+.reveal-line {
+  opacity: 0;
+  transform: scaleX(0.35);
+  transform-origin: left;
+}
+
+.reveal-line[data-visible="true"] {
+  animation: lineReveal 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   animation-delay: var(--reveal-delay, 0ms);
 }
 
@@ -241,9 +334,11 @@ body::after {
   }
 
   .reveal,
+  .reveal-line,
   .page-enter {
     opacity: 1;
     transform: none;
+    filter: none;
     animation: none !important;
   }
 }
