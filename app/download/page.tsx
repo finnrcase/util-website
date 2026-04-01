@@ -10,14 +10,15 @@ import { Reveal } from "@/components/reveal";
 const downloads = [
   {
     platform: "Windows",
-    status: "Coming soon",
-    note: "Future desktop installer placeholder",
+    status: "Available now",
+    note: "Windows x64 installer for Util v0.1.1",
     icon: "/platform/windows-installer-badge.svg",
+    href: "https://github.com/finnrcase/util/releases/download/v0.1.1/Util-Setup-Windows-x64-v0.1.1.exe.exe",
   },
   {
     platform: "Mac",
-    status: "Coming soon",
-    note: "Future desktop installer placeholder",
+    status: "In progress",
+    note: "Mac installer is still in progress",
     icon: "/platform/mac-installer-badge.svg",
   },
 ];
@@ -35,10 +36,10 @@ export default function DownloadPage() {
             <div className="max-w-2xl">
               <div className="text-[11px] tracking-[0.24em] text-[#706B71] uppercase">Future installers</div>
               <h2 className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-white md:text-[2rem]">
-                Download cards ready for the first public release.
+                Windows is live, and Mac is still in progress.
               </h2>
               <p className="mt-3 text-sm leading-6 text-[#A7A8AB] md:text-base md:leading-7">
-                When the desktop builds are ready, replace the placeholders below with real links, version details, and release notes.
+                Download the current Windows installer below. The Mac option is still being worked on.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
@@ -76,13 +77,24 @@ export default function DownloadPage() {
                     Future slot for version number, minimum OS support, and release notes.
                   </div>
 
-                  <button
-                    type="button"
-                    disabled
-                    className="mt-6 inline-flex cursor-not-allowed items-center justify-center rounded-full border border-white/12 bg-white/[0.04] px-5 py-3 text-sm font-medium text-white/60"
-                  >
-                    {item.status}
-                  </button>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-6 inline-flex items-center justify-center rounded-full border border-white/12 bg-white/[0.08] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-white/[0.14]"
+                    >
+                      Download now
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      disabled
+                      className="mt-6 inline-flex cursor-not-allowed items-center justify-center rounded-full border border-white/12 bg-white/[0.04] px-5 py-3 text-sm font-medium text-white/60"
+                    >
+                      {item.status}
+                    </button>
+                  )}
                 </div>
               </Reveal>
             ))}
@@ -92,9 +104,9 @@ export default function DownloadPage() {
 
       <section>
         <div className="grid gap-6 md:grid-cols-3">
-          <Reveal variant="blur"><InfoCard title="Brand assets">Replace the shared files in `/brand/` when the final mark and wordmark are ready.</InfoCard></Reveal>
-          <Reveal delay={80} variant="blur"><InfoCard title="Installer links">Attach real Windows and Mac download URLs once the first public builds exist.</InfoCard></Reveal>
-          <Reveal delay={160} variant="blur"><InfoCard title="Release details">Add setup guidance, minimum OS versions, and known limitations as launch approaches.</InfoCard></Reveal>
+          <Reveal variant="blur"><InfoCard title="Product updates">Follow Util as the desktop experience continues to expand with a more polished release flow and launch materials.</InfoCard></Reveal>
+          <Reveal delay={80} variant="blur"><InfoCard title="Installer links">Windows is available now, and Mac support is still in progress.</InfoCard></Reveal>
+          <Reveal delay={160} variant="blur"><InfoCard title="Release details">Release notes and platform guidance will be published here as new versions become available.</InfoCard></Reveal>
         </div>
       </section>
     </PageShell>

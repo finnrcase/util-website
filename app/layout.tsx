@@ -78,9 +78,9 @@ export default function RootLayout({
                 <div className="max-w-lg">
                   <BrandMark />
                   <p className="mt-4 text-sm leading-6 text-[#A7A8AB]">
-                    The public-facing home for Util: product story, roadmap,
-                    future downloads, and a cleaner presentation layer for the
-                    same product family as the desktop app.
+                    Util helps you choose better times to run flexible workloads
+                    by turning energy cost and carbon signals into clear,
+                    practical scheduling decisions.
                   </p>
                 </div>
 
@@ -92,7 +92,7 @@ export default function RootLayout({
                     Demo
                   </Link>
                   <Link href="/roadmap" className="transition-colors hover:text-white">
-                    What&apos;s Coming
+                    Roadmap
                   </Link>
                   <Link href="/download" className="transition-colors hover:text-white">
                     Download
