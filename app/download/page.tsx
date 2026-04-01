@@ -12,14 +12,14 @@ const downloads = [
     platform: "Windows",
     status: "Available now",
     note: "Windows x64 installer for Util v0.1.1",
-    icon: "/platform/windows-installer-badge.svg",
+    icon: "/platform/windows-installer-badge.png",
     href: "https://github.com/finnrcase/util/releases/download/v0.1.1/Util-Setup-Windows-x64-v0.1.1.exe.exe",
   },
   {
     platform: "Mac",
     status: "In progress",
     note: "Mac installer is still in progress",
-    icon: "/platform/mac-installer-badge.svg",
+    icon: "/platform/mac-installer-badge.png",
   },
 ];
 
