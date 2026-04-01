@@ -321,9 +321,9 @@ export default function HomePage() {
         </Reveal>
 
         <div className="text-sm text-[#A7A8AB]">
-          Future brand asset slot: replace the shared logo files in `/brand/` when they are ready.
+          Explore the latest product direction, download availability, and upcoming improvements for Util.
           <Link href="/download" className="ml-2 text-white underline underline-offset-4">
-            Download page asset slots
+            View downloads
           </Link>
         </div>
       </div>
