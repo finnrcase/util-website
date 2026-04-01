@@ -46,19 +46,19 @@ export default function AboutPage() {
           <Reveal delay={120} variant="right">
             <div className="surface-strong hairline rounded-[2rem] p-6 md:p-8">
               <div className="text-[11px] tracking-[0.24em] text-[#706B71] uppercase">Visual anchor</div>
-              <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">System diagram slot</h3>
+              <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">System overview</h3>
               <p className="mt-4 text-sm leading-6 text-[#A7A8AB]">
-                Drop `/diagrams/util-system-diagram.svg` here to show workload input, grid signal comparison, and optimized output.
+                A visual summary of how Util evaluates workload timing and turns changing energy signals into clearer scheduling decisions.
               </p>
               <div className="mt-6 overflow-hidden rounded-[1.7rem] border border-white/8 bg-[#111216]/55">
                 <AssetImageSlot
-                  src="/diagrams/util-system-diagram.svg"
-                  alt="Util system diagram"
+                  src="/diagrams/hero-product-preview.png"
+                  alt="Util system overview"
                   wrapperClassName="aspect-[16/10] overflow-hidden rounded-[1.7rem]"
                   imageClassName="h-full w-full rounded-[1.7rem] bg-[#111216] object-contain"
                   fallbackLabel="Expected file"
-                  fallbackTitle="/diagrams/util-system-diagram.svg"
-                  fallbackBody="Add the system explainer diagram here. A wide SVG with transparent background works best."
+                  fallbackTitle="/diagrams/hero-product-preview.png"
+                  fallbackBody="This section displays the current Util system overview image."
                 />
               </div>
             </div>
