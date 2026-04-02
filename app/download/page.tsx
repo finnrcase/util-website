@@ -19,7 +19,7 @@ const downloads = [
     platform: "Mac",
     status: "In progress",
     note: "Mac installer is still in progress",
-    icon: "/platform/mac-installer-badge.png",
+    icon: "/brand/apple-icon.png",
   },
 ];
 
