@@ -9,8 +9,8 @@ export default function DemoPage() {
   return (
     <PageShell
       eyebrow="Live Demo"
-      title="Preview the Util demo through one polished showcase module."
-      intro="A focused demo page with a single visual anchor, minimal copy, and a direct path into the live experience."
+      title="See how Util helps teams schedule compute at the right time."
+      intro="Explore a quick preview of the product experience, then open the live demo to see how Util turns energy and timing signals into clear scheduling decisions."
     >
       <section>
         <div className="surface-strong hairline relative overflow-hidden rounded-[2.25rem] p-5 md:p-7">
@@ -28,7 +28,7 @@ export default function DemoPage() {
                   Explore the product flow before stepping into the live app.
                 </h2>
                 <p className="mt-4 max-w-md text-sm leading-6 text-[#A7A8AB] md:text-base md:leading-7">
-                  The page stays intentionally quiet: one framed preview, one clear destination, and enough context to make the click feel confident.
+                  Get a quick look at the interface, understand the value at a glance, and jump straight into the live demo when you are ready to explore further.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -72,9 +72,9 @@ export default function DemoPage() {
                         alt="Util demo interface preview"
                         wrapperClassName="relative aspect-[16/10] w-full overflow-hidden"
                         imageClassName="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                        fallbackLabel="Expected preview"
-                        fallbackTitle={liveDemoPreviewSrc}
-                        fallbackBody="Place the demo screenshot here and this full preview card will launch the live app."
+                        fallbackLabel="Preview unavailable"
+                        fallbackTitle="Live demo preview"
+                        fallbackBody="A preview image will appear here. You can still open the live demo directly from this card."
                       />
                     </Reveal>
                   </div>
