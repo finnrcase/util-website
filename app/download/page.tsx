@@ -13,6 +13,7 @@ const downloads = [
     status: "Available now",
     note: "Windows x64 installer for Util v0.1.1",
     icon: "/platform/windows-installer-badge.png",
+    iconClassName: "bg-[#111216]",
     href: "https://github.com/finnrcase/util/releases/download/v0.1.1/Util-Setup-Windows-x64-v0.1.1.exe.exe",
   },
   {
@@ -20,6 +21,7 @@ const downloads = [
     status: "In progress",
     note: "Mac installer is still in progress",
     icon: "/brand/apple-icon.png",
+    iconClassName: "bg-white",
   },
 ];
 
@@ -58,7 +60,7 @@ export default function DownloadPage() {
                         src={item.icon}
                         alt={`${item.platform} installer badge`}
                         wrapperClassName="h-14 w-14 shrink-0 overflow-hidden rounded-2xl"
-                        imageClassName="h-14 w-14 rounded-2xl bg-[#111216] object-contain p-2"
+                        imageClassName={`h-14 w-14 rounded-2xl object-contain p-2 ${item.iconClassName}`}
                         fallbackLabel="Optional"
                         fallbackTitle={item.platform}
                         compactFallback
