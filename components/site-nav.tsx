@@ -16,7 +16,7 @@ export function SiteNav({ mobile = false }: { mobile?: boolean }) {
   return (
     <div className={mobile ? "flex flex-wrap gap-3" : "hidden items-center gap-2 md:flex"}>
       {navItems.map((item) => {
-        const active = pathname === item.href;
+        const active = pathname === item.href || (item.href === "/about" && pathname === "/");
 
         return (
           <Link

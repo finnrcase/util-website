@@ -45,8 +45,7 @@ export default function HomePage() {
 
           <Reveal delay={120} variant="right">
             <div className="surface-strong hairline rounded-[2rem] p-6 md:p-8">
-              <div className="text-[11px] tracking-[0.24em] text-[#706B71] uppercase">Visual anchor</div>
-              <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-white">System overview</h3>
+              <h3 className="text-2xl font-semibold tracking-[-0.04em] text-white">System overview</h3>
               <p className="mt-4 text-sm leading-6 text-[#A7A8AB]">
                 A visual summary of how Util evaluates workload timing and turns changing energy signals into clearer scheduling decisions.
               </p>

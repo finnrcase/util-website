@@ -29,8 +29,8 @@ export default function DownloadPage() {
   return (
     <PageShell
       eyebrow="Download"
-      title="A minimal home for the future downloadable Util app."
-      intro="This page stays launch-oriented without pretending installers exist yet: clear platform cards, restrained copy, and a strong product feel."
+      title="Download Util and start scheduling compute at better times."
+      intro="The Windows installer is available now. Mac support is in progress. More platforms will follow as the desktop app continues to develop."
     >
       <section>
         <div className="surface-strong hairline rounded-[2.1rem] p-6 md:p-8">
@@ -73,10 +73,6 @@ export default function DownloadPage() {
                     <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-[#A7A8AB]">
                       {item.status}
                     </div>
-                  </div>
-
-                  <div className="mt-6 rounded-[1.35rem] border border-white/8 bg-[#111216]/60 px-4 py-4 text-sm text-[#706B71]">
-                    Future slot for version number, minimum OS support, and release notes.
                   </div>
 
                   {item.href ? (
