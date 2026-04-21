@@ -52,7 +52,7 @@ export default function HomePage() {
               </p>
               <div className="mt-6 overflow-hidden rounded-[1.7rem] border border-white/8 bg-[#111216]/55">
                 <AssetImageSlot
-                  src="/diagrams/hero-product-preview.png"
+                  src="/previews/hero-product-preview.png"
                   alt="Util system overview"
                   wrapperClassName="aspect-[16/10] overflow-hidden rounded-[1.7rem]"
                   imageClassName="h-full w-full rounded-[1.7rem] bg-[#111216] object-contain"
